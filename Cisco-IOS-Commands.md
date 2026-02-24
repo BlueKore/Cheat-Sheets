@@ -49,3 +49,10 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 - `end` => Return to the **Privileged EXEC Mode**. ℹ️ You can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Return to the **Global Configuration Mode**
+
+## Most Useful Shortcuts
+
+- `CTRL+D` => Delete the character on the right of the cursor
+- `CTRL+SHIFT+6` => Abort current ping/traceroute
+- `Up Arrow` => Move to the previous command on the history buffer
+- `Down Arrow` => Move to the next command on the history buffer
