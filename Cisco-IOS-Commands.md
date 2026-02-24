@@ -22,37 +22,55 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 ### Useful commands
 
+- `copy running-config startup-config` => Copies the current and running configuration from the **RAM** to the persistent **NVAM** storage. 📝 You can use the shorthand `copy run start` for the same effect.
 - `configure terminal` => Activate **Global Configuration Mode**. A different prompt will be presented with the `(config)` part between the hostname and the hash sign: `Switch1(config)#`
 - `disable` => Return to **User EXEC Mode**
+- `erase startup-config` => Removes the start up configuration from **NVRAM**. ❗This needs to be used with **CAUTION**!
+- `reload` => Stops the system and perform a cold restart
+- `show running-config` => Show current operating configuration, including line config. and access config.
 
 ## Global Configuration Mode
 
 ### Useful commands
 
-- `end` => Return to the **Privileged EXEC Mode**. ℹ️ You can get the same result with the `CTRL+Z` shorcut.
+- `banner motd MESSAGE` => Sets **Message Of The Day** banner. ⚠️ Warning: the message needs to be delimited by two special characters like `"MESSAGE"` or `#Message#`.
+  - **Example:** `banner motd "Authorized access only!"` (will set the privileged level password to `cisco`)
+- `enable password` => Set the privileged level password
+  - **Example:** `enable password cisco` (will set the privileged level password to `cisco`)
+- `enable secret` => Set the privileged level secret. ⚠️ Warning: setting the secret will override the privileged level password
+  - **Example:** `enable secret class` (will set the privileged level secret to `class`)
+- `end` => Return to the **Privileged EXEC Mode**. ℹ️ Tip: you can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Exit the **Global Configuration Mode**
+- `hostname` => Change the hostname of the current device
+  - **Example:** `hostname SwitchOnArea1` (will change the prompt to `SwitchOnArea1#`)
 - `interface` => Enter the **Interface Subconfiguration Mode**
   - **Examples:** `interface vlan 1` (for configuring the first VLAN) or `interface FastEthernet 0/1` (for configuring the port 1 on the __FastEthernet__ interface)
 - `line` => Enter the **Line Subconfiguration Mode**
   - **Examples:** `line console 0` (for configuring the console connection) or `line vty 0 15` (for configuring the virtual terminal lines from 0 to 15 that are used for SSH/Telnet)
+- `service password-encrypt` => Encrypt all plaintext passwords
 
 ## Interface Subconfiguration Mode
 
 ### Useful commands
 
-- `end` => Return to the **Privileged EXEC Mode**. ℹ️ You can get the same result with the `CTRL+Z` shorcut.
+- `end` => Return to the **Privileged EXEC Mode**. ℹ️ Tip: you can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Return to the **Global Configuration Mode**
 
 ## Line Subconfiguration Mode
 
 ### Useful commands
 
-- `end` => Return to the **Privileged EXEC Mode**. ℹ️ You can get the same result with the `CTRL+Z` shorcut.
+- `end` => Return to the **Privileged EXEC Mode**. ℹ️ Tip: you can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Return to the **Global Configuration Mode**
+- `login` => Enable password checking
+- `password` => Change the line password. ⚠️ Warning: you need to execute the `login` command after setting the password
+  - **Example:** `password cisco` (changes the current line password to cisco)
 
 ## Most Useful Shortcuts
 
+- `CTRL+C` => Abort certain comands
 - `CTRL+D` => Delete the character on the right of the cursor
-- `CTRL+SHIFT+6` => Abort current ping/traceroute
+- `CTRL+SHIFT+6` => Abort current ping/traceroute/DNS lookup/etc
 - `Up Arrow` => Move to the previous command on the history buffer
 - `Down Arrow` => Move to the next command on the history buffer
+- `Tab` => Complete the current command that is being written on the prompt
