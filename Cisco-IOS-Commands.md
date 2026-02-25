@@ -15,6 +15,11 @@ The `?` operator can be used for obtaining help from now on. This will be useful
 - `traceroute DEVICE_HOSTNAME_OR_IP_ADDRESS` => Trace route to destination address or hostname.
   - **Examples:** `traceroute google.pt` or `traceroute 192.168.1.1`
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Privileged Exec Mode
 
 After enabling the **Privileged Exec Mode**, the user gets a prompt with the following format: `Hostname#` (example: `Switch1#`). 
@@ -33,13 +38,17 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 - `show ip interface brief` => Show information about the device interfaces.
 - `show running-config` => Show current operating configuration, including line config. and access config.
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Global Configuration Mode
 
 ### Useful commands
 
 - `banner motd MESSAGE` => Sets **Message Of The Day** banner. ⚠️ **Warning:** the message needs to be delimited by two special characters like `"MESSAGE"` or `#Message#`.
-  - **Example:** `banner motd "Authorized access only!"` (will set the privileged level password to `cisco`)
+  - **Example:** `banner motd "Authorized access only!"` (will set the MOTD to `Authorized access only!`)
 - `enable password` => Set the privileged level password.
   - **Example:** `enable password cisco` (will set the privileged level password to `cisco`)
 - `enable secret` => Set the privileged level secret. ⚠️ **Warning:** setting the secret will override the privileged level password.
@@ -54,6 +63,11 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
   - **Examples:** `line console 0` (for configuring the console connection) or `line vty 0 15` (for configuring the virtual terminal lines from 0 to 15 that are used for SSH/Telnet)
 - `service password-encrypt` => Encrypt all plaintext passwords.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Interface Subconfiguration Mode
 
 ### Useful commands
@@ -64,6 +78,11 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
   - **Example:** `ip address 192.168.1.100 255.255.255.0` (for setting the `192.168.1.100` as the device's IP address and setting `255.255.255.0` as the submask.
 - `ip default-gateway ip-address` => Assign the default gateway **IP** address in a device. This can be the router which the switch connects to.
 - `no shutdown` => Enable the virtual interface that was configured with the **IP** address.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Line Subconfiguration Mode
 
