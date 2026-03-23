@@ -27,6 +27,7 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 ### Useful commands
 
+- `clear aaa local user lockout username <username>` => This clears the account lockout tied to the local `<username>` account
 - `copy running-config startup-config` => Copies the current and running configuration from the **RAM** to the non-volatile **NVAM** storage. 📝 You can use the shorthand `copy run start` for the same effect.
 - `copy startup-config running-config ` => Copies the configuration stored in **NVRAM** and applies it to the running configuration on the **RAM**.
 - `configure terminal` => Activate **Global Configuration Mode**. A different prompt will be presented with the `(config)` part between the hostname and the hash sign: `Switch1(config)#`.
@@ -35,7 +36,8 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 - `disable` => Return to **User EXEC Mode**.
 - `erase startup-config` => Removes the start up configuration from **NVRAM**. ❗This needs to be used with **CAUTION**! Usually, you reload the device with `reload` command after issuing this instruction.
 - `reload` => Stops the system and perform a cold restart.
-- `show ip interface brief` => Show information about the device interfaces.
+- `show ip interface brief` => Show IPV4 information about the device interfaces.
+- `show ipv6 interface brief` => Show IPV6 information about the device interfaces.
 - `show running-config` => Show current operating configuration, including line config. and access config.
 
 <br/>
