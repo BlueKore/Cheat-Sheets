@@ -76,8 +76,12 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 - `end` => Return to the **Privileged EXEC Mode**. ℹ️ Tip: you can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Return to the **Global Configuration Mode**.
-- `ip address ip-address subnet-mask` => Assign an **IP** address and a subnet mask to a device on an interface.
-  - **Example:** `ip address 192.168.1.100 255.255.255.0` (for setting the `192.168.1.100` as the device's IP address and setting `255.255.255.0` as the submask.
+- `ip address ip-address subnet-mask` => Assign an **IPv4** address and a subnet mask to a device on an interface.
+  - **Example:** `ip address 192.168.1.100 255.255.255.0` (for setting the `192.168.1.100` as the device's IPv4 address and setting `255.255.255.0` as the submask).
+- `ipv6 address <ip-address>/<prefix-length>` => Assign an **IPv6** address with the respective prefix to a device on an interface.
+  - **Example:** `ipv6 address 2001:db8:acad:1::1/64` (for setting the `2001:db8:acad:1::1` as the device's IPv6 address with `/64` prefix in slash notation).
+- `ipv6 address <ipv6-address> link-local` => Assign an **IPv6** link-local address (LLA) to a device on an interface.
+  - **Example:** `ipv6 address fe80::1:1 link-local` (for setting the `fe80:0000:0000:0000:0000:0000:0001:0001` as the device's IPv6 LLA address).
 - `ip default-gateway ip-address` => Assign the default gateway **IP** address in a device. This can be the router which the switch connects to.
 - `no shutdown` => Enable the virtual interface that was configured with the **IP** address.
 
