@@ -61,6 +61,8 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
   - **Example:** `hostname SwitchOnArea1` (will change the prompt to `SwitchOnArea1#`)
 - `interface` => Enter the **Interface Subconfiguration Mode**.
   - **Examples:** `interface vlan 1` (for configuring the first VLAN) or `interface FastEthernet 0/1` (for configuring the port 1 on the __FastEthernet__ interface)
+- `ip default-gateway <DEFAULT_GATEWAY_IP>` => Configures the default gateway for the switch/router
+- `ip route <DESTINATION_NETWORK> <SUBNET_MASK> <NEXT_HOP_IP>` => Adds a route to the router
 - `line` => Enter the **Line Subconfiguration Mode**.
   - **Examples:** `line console 0` (for configuring the console connection) or `line vty 0 15` (for configuring the virtual terminal lines from 0 to 15 that are used for SSH/Telnet)
 - `service password-encrypt` => Encrypt all plaintext passwords.
@@ -74,6 +76,7 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 ### Useful commands
 
+- `duplex <DUPLEX_MODE>` => Sets the duplex mode. **Possible values:** `half`, `full` and `auto` 
 - `end` => Return to the **Privileged EXEC Mode**. ℹ️ Tip: you can get the same result with the `CTRL+Z` shorcut.
 - `exit` => Return to the **Global Configuration Mode**.
 - `ip address ip-address subnet-mask` => Assign an **IPv4** address and a subnet mask to a device on an interface.
@@ -84,6 +87,7 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
   - **Example:** `ipv6 address fe80::1:1 link-local` (for setting the `fe80:0000:0000:0000:0000:0000:0001:0001` as the device's IPv6 LLA address).
 - `ip default-gateway ip-address` => Assign the default gateway **IP** address in a device. This can be the router which the switch connects to.
 - `no shutdown` => Enable the virtual interface that was configured with the **IP** address.
+- `switchport mode <ACCESS>` => Changes the switch port mode. **Possible values:** `access`, `trunk` or `dynamic`
 
 <br/>
 <br/>
