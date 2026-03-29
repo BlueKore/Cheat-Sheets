@@ -51,6 +51,8 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 
 - `banner motd MESSAGE` => Sets **Message Of The Day** banner. ⚠️ **Warning:** the message needs to be delimited by two special characters like `"MESSAGE"` or `#Message#`.
   - **Example:** `banner motd "Authorized access only!"` (will set the MOTD to `Authorized access only!`)
+- `default interface <INTERFACE_ID>` => Erase all custom configuration from the `<INTERFACE_ID>` and return it to its default state.
+  - **Example:** `default interface g0/1` (will erase all configuration from GigabitEthernet 0/1)
 - `enable password` => Set the privileged level password.
   - **Example:** `enable password cisco` (will set the privileged level password to `cisco`)
 - `enable secret` => Set the privileged level secret. ⚠️ **Warning:** setting the secret will override the privileged level password.
@@ -65,6 +67,8 @@ After enabling the **Privileged Exec Mode**, the user gets a prompt with the fol
 - `ip route <DESTINATION_NETWORK> <SUBNET_MASK> <NEXT_HOP_IP>` => Adds a route to the router
 - `line` => Enter the **Line Subconfiguration Mode**.
   - **Examples:** `line console 0` (for configuring the console connection) or `line vty 0 15` (for configuring the virtual terminal lines from 0 to 15 that are used for SSH/Telnet)
+- `no ip domain-lookup` => Prevents IOS from attempting to resolve mistyped commands to domain names
+- `security password min-length <MIN_LENGTH>` => Sets the minimum password length to `<MIN_LENGTH>` for new users
 - `service password-encrypt` => Encrypt all plaintext passwords.
 
 <br/>
